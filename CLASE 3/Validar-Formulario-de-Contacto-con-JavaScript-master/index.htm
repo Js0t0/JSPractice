@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es-HN">
+<head>
+<title>Validación Formulario de Contacto</title>
+<meta name="author" content="Roberto E. Murillo D." />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Validación de Formulario de Contacto con JavaScript" />
+<meta name="keywords" content="validacion, formulario, contacto, javascript, js, formulario de contacto, 
+validacion de formulario de contacto, validacion de formulario de contacto con javascript" />
+<link rel="stylesheet" type="text/css" href="style/index.css" media="screen" />
+</head>
+<body>
+<div id="contenedor">
+	<h1>Validación de Formulario de Contacto con JavaScript</h1>
+	<form method="post" action="" onsubmit="return validacion()">
+		<fieldset>
+			<legend>Validando Formulario</legend>
+			<label for="nombre">Usuario:</label>
+			<input type="text" id="nombre" placeholder="Nombre Completo" />
+			<span id="nombre_error" class="mensaje_error"></span>
+			<label for="correo">Correo:</label>
+			<input type="text" id="correo" placeholder="usuario@dominio.com" />
+			<span id="correo_error" class="mensaje_error"></span>
+			<label for="asunto">Asunto:</label>
+			<input type="text" id="asunto" placeholder="Titulo del Asunto" />
+			<span id="asunto_error" class="mensaje_error"></span>
+			<label for="mensaje">Mensaje:</label>
+			<textarea id="mensaje" placeholder="Descripción del Asunto" rows="5" cols="50"></textarea>
+			<span id="mensaje_error" class="mensaje_error"></span>
+			<div id="botones">
+				<input type="submit" value="Enviar" />
+				<input type="button" id="borrar" value="Borrar Todo" />
+			</div>
+		</fieldset>
+	</form>
+	<a href="../" title="Ir hacia atrás">Ir Atrás</a>
+</div>
+<script src="js/validacion.js"></script>
+</body>
+</html>

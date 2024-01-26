@@ -1,0 +1,139 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+html,body {
+	color: #000;
+	background-color: #dbdada;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+	font-weight: bolder;
+	text-align: center;
+	font-size: 38px;
+	margin-top: 12px;
+	margin-bottom: 12px;
+	text-shadow: 0px 0px 4px #f00;
+}
+
+form {
+	width: 90%;
+	max-width: 100%;
+	height: auto;
+	margin: 0px auto 12px auto;
+	padding: 1%;
+}
+
+fieldset {
+	width: 40%;
+	max-width: 100%;
+	height: auto;
+	margin: 0px auto;
+	padding: 1.5%;
+	box-shadow: 0px 0px 8px #f00;
+	border: 1px solid #000;
+	border-radius: 1em;
+	-webkit-border-radius: 1em;
+	background-color: #51C3FD;
+}
+
+legend {
+	color: #f00;
+	font-weight: bolder;
+	text-align: center;
+	font-size: 18px;
+	text-shadow: 0px 0px 4px #000;
+	font-style: italic;
+	text-transform: uppercase;
+}
+
+label {
+	color: #f00;
+	font-weight: bolder;
+	display: block;
+	text-align: center;
+	font-size: 16px;
+	text-transform: uppercase;
+	margin: 4px auto;
+	padding: 0px;
+	text-shadow: 0px 0px 4px #000;
+}
+
+input[type="text"], textarea {
+	width: 360px;
+	max-width: 100%;
+	height: auto;
+	display: block;
+	margin: 0px auto;
+	padding: 2px;
+	font-weight: bolder;
+	border: 1px solid #000;
+}
+
+textarea {
+	resize: none;
+}
+
+input[type="submit"], input[type="button"] {
+	width: 210px;
+	max-width: 100%;
+	height: auto;
+	display: inline-block;
+	margin: 4px 2px;
+	text-transform: uppercase;
+	cursor: pointer;
+	font-size: 12px;
+	color: #f00;
+	font-weight: bolder;
+	padding: 3px;
+	text-align: center;
+}
+
+a { 
+	color: #f00; 
+	display: block; 
+	width: 120px; 
+	cursor: pointer; 
+	margin: 20px auto 0px auto; 
+	padding: 5px; 
+	font-size: 18px; 
+	text-align: center; 
+	font-weight: bolder; 
+	text-decoration: none; 
+}
+
+a:hover { 
+	text-shadow: 0px 0px 2px #000; 
+	text-decoration: underline; 
+}
+
+#botones {
+	width: 100%;
+	max-width: 100%;
+	height: auto;
+	margin: 2px auto;
+	padding: 2px;
+	text-align: center;
+}
+
+#contenedor {
+	width: 99%;
+	max-width: 100%;
+	height: auto;
+	margin: 0px auto;
+	padding: 2px;
+}
+
+.mensaje_error {
+	color: #000;
+	display: block;
+	font-weight: bolder;
+	text-align: center;
+	font-size: 14px;
+	text-transform: uppercase;
+	font-style: italic;
+	text-shadow: 0px 0px 4px #f00;
+	margin: 6px auto;
+}
