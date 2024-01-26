@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Curso JavaScript / Clase 01 / Laboratorio 01</title>
+    </head>
+    <body>
+        <h1>Curso JavaScript / Clase 01 / Laboratorio 01</h1>
+        <p>Tema: Estructuras de Control</p>
+        <hr/>
+        <p>Solicitud de datos</p>
+        <label for="cboJuguete">Seleccione el juguete que desea comprar: </label>
+        <select name="cboJuguete" id="cboJuguete">
+            <option value="70.99">Monopolio</option>
+            <option value="78.99">Ajedrez</option>
+            <option value="100.99">Lego</option>
+            <option value="58.50">Dama</option>
+            <option value="35.00">Laberinto</option>
+        </select>
+        <br>
+        <label for="txtCantidadJuguetes">Ingrese la cantidad de juguetes que desea comprar: </label>
+        <input type="text" name="txtCantidadJuguetes" id="txtCantidadJuguetes" />
+        <br>
+        <button onclick="javascript:calcularImportes()">Calcular Importes</button>
+        <hr/>
+        <div id="resultado"></div>
+        <script src="Laboratorio01.js"></script>
+    </body>
+</html>

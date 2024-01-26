@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Curso JavaScript</title>
+  </head>
+  <body>
+    <h1>Curso JavaScript / Clase 01 / Laboratorio 01</h1>
+    <p>Tema : Estructuras de Control</p>
+    <hr />
+    <p>Solicitud de Datos</p>
+    <label for="slcJuguete">Seleccione el juguete que desea comprar: </label>
+    <select id="slcJuguete" name="slcJuguete">
+      <option value="70.99" >Monopolio</option>
+      <option value="78.99" >Ajedrez</option>
+      <option value="100.99">Lego</option>
+      <option value="58.50" >Dama</option>
+      <option value="35.00" >Laberinto</option>
+    </select>
+    <br />
+    <label for="txtCantJuguete" > Ingrese la cantidad de juguetes que desea comprar: </label>
+    <input type="text" id="txtCantJuguete" name="txtCantJuguete" placeholder="Ingresa el monto mayor a 0" />
+    <br />
+    <input onclick="javascript:calImportes()" type="button" value="Calular Importes" />
+    <hr />
+    <div id="resultado"></div>
+    <script src="SolLab01.js"></script>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Página de Votación del curso de JavaScript</title>
+</head>
+
+<body onload="">
+    
+    <h1>Página de Votación del curso de JavaScript</h1>
+    <br>
+    Solicitud de voto de los alumnos el curso de JavaScript.
+    <br>
+    <br>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSepMl-a6I03WOJ6h8ZRyM94d8XVGsBXgGfB7GLO939wrrJSxw/viewform"
+        target="_blank">Volver a votar</a>
+
+    <!--Codigo JS-->
+    <script>
+        principal()
+        //Funcion principal
+        function principal() {
+            
+            //Se llama a la funcion pedirVoto
+            pedirVoto();
+            
+            //Se llama a la funcion funcion2
+            funcion2();
+            
+            //Se llama a la funcion funcion3
+            funcion3();
+        }
+
+        function pedirVoto() {
+            
+            if (confirm("Votar si te gusta o no el curso de JavaScript")) {
+                window.open("https://docs.google.com/forms/d/e/1FAIpQLSepMl-a6I03WOJ6h8ZRyM94d8XVGsBXgGfB7GLO939wrrJSxw/viewform", "", "")
+            } else {
+                console.log('No se aceptó la solicitud del voto');
+            }
+        }
+
+        function funcion2() {
+            console.log('Se llamó a la funcion 2');
+        }
+
+        function funcion3() {
+            console.log('Se llamó a la funcion 3');
+        }
+
+    </script>
+</body>
+
+</html>

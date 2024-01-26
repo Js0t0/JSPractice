@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Curso JavaScript / Clase 02 / Funciones / Ejemplo 02</title>
+    </head>
+    <body>
+        <h1>Curso JavaScript / Clase 02 / Funciones / Ejemplo 02</h1>
+        <p>Ejemplo 02 / Creacion de funciones de usuario</p>
+        <hr>
+        
+        <p>
+            Primera función (con parámetros):
+            <button onclick="generarTablaMultiplicar(12)">Mostrar tabla de multiplicar del número 12 </button>
+        </p>
+        
+        <p>
+            Segunda función (con parámetros):
+            <button onclick="mostrarTablaMultiplicar()">Mostrar tabla de multiplicar del número ingresado </button>
+        </p>
+        
+        <p>
+            Tercera función (con parámetros):
+            <button onclick="operarNumeros()">Operar dos numeros </button>
+            =>
+            <input type="text" id="txtOperacionNumero1" placeholder="Numero 1" style="width: 80px;">
+            <select id="cboOperador">
+                <option value="+">Sumar</option>
+                <option value="-">Restar</option>
+                <option value="*">Multiplicar</option>
+                <option value="/">Dividir</option>
+            </select>
+            <input type="text" id="txtOperacionNumero2" placeholder="Numero 2" style="width: 80px;">
+            =>
+            <input type="text" id="txtOperacion" disabled>
+        </p>
+        
+        <p>
+            Cuarta función (con parámetros):
+            <button onclick="determinarNumeroPrimo(parseInt(document.getElementById('txtNumeroPrimo').value))">Determinar si el número es primo</button>
+            =>
+            <input type="text" id="txtNumeroPrimo" placeholder="Numero" style="width: 80px;">
+            =>
+            <input type="text" id="txtResultadoNumeroPrimo" disabled>
+        </p>
+        
+        <p>
+            Quinta función (con parámetros):
+            <button onclick="determinarPalindroma(document.getElementById('txtPalabra').value)">Determinar si la palabra es palíndroma</button>
+            =>
+            <input type="text" id="txtPalabra" placeholder="Palabra" style="width: 150px;">
+            =>
+            <input type="text" id="txtResultadoPalindroma" disabled>
+        </p>
+
+        <p>
+            Sexta función (con parámetros):
+            <button onclick="validarPermiso(parseInt(document.getElementById('txtEdad').value))">Validar permiso</button>
+            =>
+            <input type="text" id="txtEdad" placeholder="Edad" style="width: 150px;">
+            =>
+            <input type="text" id="txtPermiso" disabled>
+        </p>
+        
+        <script src="Ejemplo02.js"></script>
+    </body>
+</html>

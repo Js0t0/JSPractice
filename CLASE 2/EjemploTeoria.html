@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+
+        <!--Seccion de JS-->
+        <script>
+            
+            //Funcion
+            function showMessage( from, text){
+                alert(from + ': ' + text);
+            }
+
+            function suma(num1, num2){
+                let resultado = 0;
+                resultado = num1 + num2;
+                return resultado;
+            }
+
+            //Llamamos a la funcion showMessage
+            showMessage('Ann', "'Hola'");
+            showMessage('Ann', '"¿Cómo estas?"');
+
+            let sumaNumeros = suma(10, 15);
+            alert('El resulado de la suma es: ' + sumaNumeros);
+
+            
+            function validarPermiso(edad){
+                
+                if(edad >= 18){
+                    return true;
+                }else{
+                    return confirm('¿Tienes permiso de tus padres?');
+                }
+            }
+
+            let edadIngresada = parseInt(prompt('¿Qué edad tienes?'));
+
+            if(validarPermiso(edadIngresada)){
+                alert('Acceso permitido');
+            }else{
+                alert('Acceso denegado');
+            }
+
+        </script>
+    </body>
+</html>

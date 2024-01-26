@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Curso JavaScript / Clase 01 / Ejemplo 02</title>
+</head>
+<body>
+    
+    <h1>Curso JavaScript / Clase 01 / Ejemplo 02</h1>
+    <p>Uso de sentencias FOR</p>
+    
+    <label for="numeroTabla">Ingrese el número de la tabla de multiplicar:</label>
+    <input type="text" id="numeroTabla"><br>
+    
+    <button onclick="calcularTabla()">Calcular tabla</button>
+    <hr>
+    <p>Resultado:</p>
+    <div id="resultadoTabla"></div>
+
+    <script>
+        
+        function calcularTabla(){
+            
+            //Obtenemos el valor ingresado para generar la tabla de multiplicar
+            const numeroTabla = parseInt(document.getElementById("numeroTabla").value);
+
+            //Definimos una variable para almacenar el resultado
+            var tablaDeMultiplicar = "";
+
+            //Iteramos 12 veces para calcular la multiplicación desde el numero 1 hasta el 12
+            for(var i=1; i<=12; i++){
+
+                tablaDeMultiplicar = tablaDeMultiplicar +  i + " X " +  numeroTabla + " = " + (i*numeroTabla) + "<br>" ;
+            }
+
+            //Escribimos el resultado en el contenedor "resultadoTabla"
+            document.getElementById("resultadoTabla").innerHTML = tablaDeMultiplicar;3
+
+        }
+        respuesta.textContent
+    </script>
+    <script src="Ejemplo01.js"></script>
+</body>
