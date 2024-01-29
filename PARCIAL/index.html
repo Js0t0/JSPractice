@@ -7,134 +7,181 @@
   </head>
   <body>
     <h1>Formulario-Registro Evento Latinoamerica</h1>
-    <form class="formulario" id="formulario">
-      <!-- Grupo:Nombre -->
-      <div class="formulario_grupo" id="grupo_nombre">
-        <label for="nombre" class="formulario_label">Nombre y Apellido: </label>
-        <div class="formulario_grupo_input">
-            <input id="nombre" name="nombre" class="formulario_input" type="text" placeholder="Escribe tu nombre"/>
+    <main>
+      <form action="" class="formulario" id="formulario">
+        <!-- Grupo:Nombre -->
+        <div class="formulario_grupo" id="grupo_nombre">
+          <label for="nombre" class="formulario_label"
+            >Nombre y Apellido:
+          </label>
+          <div class="formulario_grupo_input">
+            <input
+              id="nombre"
+              name="nombre"
+              class="formulario_input"
+              type="text"
+              placeholder="Escribe tu nombre"
+            />
             <i class="formulario_validacion_estado fas fa-times-circle"></i>
+          </div>
+          <p class="formulario_input_error">
+            El nombre tiene que ser de 4 a 16 dígitos y solo puede contener
+            numeros, letras y guion bajo.
+          </p>
         </div>
-        <p class="formulario_input_error">El nombre tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo.</p>
-      </div>
-      
-      <!-- Grupo:Usuario -->
-      <div class="formulario_grupo" id="grupo_usuario">
-        <label for="usuario" class="formulario_label">Usuario: </label>
-        <div class="formulario_grupo_input">
-            <input id="usuario" name="usuario" class="formulario_input" type="text" placeholder="Escribe tu usuario"/>
+
+        <!-- Grupo:Usuario -->
+        <div class="formulario_grupo" id="grupo_usuario">
+          <label for="usuario" class="formulario_label">Usuario: </label>
+          <div class="formulario_grupo_input">
+            <input
+              id="usuario"
+              name="usuario"
+              class="formulario_input"
+              type="text"
+              placeholder="Escribe tu usuario"
+            />
             <i class="formulario_validacion_estado fas fa-times-circle"></i>
+          </div>
+          <p class="formulario_input_error">
+            El usuario tiene que ser de 4 a 16 dígitos y solo puede contener
+            numeros, letras y guion bajo.
+          </p>
         </div>
-        <p class="formulario_input_error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo.</p>
-      </div>
 
-      <!-- Grupo:Correo -->
-      <div class="formulario_grupo" id="grupo_correo">
-        <label for="correo" class="formulario_label">Correo: </label>
-        <div class="formulario_grupo_input">
-            <input id="correo" name="correo" class="formulario_input" type="email" />
+        <!-- Grupo:Correo -->
+        <div class="formulario_grupo" id="grupo_correo">
+          <label for="correo" class="formulario_label">Correo: </label>
+          <div class="formulario_grupo_input">
+            <input
+              id="correo"
+              name="correo"
+              class="formulario_input"
+              type="email"
+            />
             <i class="formulario_validacion_estado fas fa-times-circle"></i>
+          </div>
+          <p class="formulario_input_error">
+            El correo solo puede contener letras, numeros, puntos, guiones y
+            guion bajo.
+          </p>
         </div>
-        <p class="formulario_input_error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
-      </div>
 
-      <!-- Grupo:Password -->
-      <div class="formulario_grupo" id="grupo_password">
-        <label for="password" class="formulario_label">Contraseña: </label>
-        <div class="formulario_grupo_input">
-            <input id="password" name="password" class="formulario_input" type="password" />
+        <!-- Grupo:Password -->
+        <div class="formulario_grupo" id="grupo_password">
+          <label for="password" class="formulario_label">Contraseña: </label>
+          <div class="formulario_grupo_input">
+            <input
+              id="password"
+              name="password"
+              class="formulario_input"
+              type="password"
+            />
             <i class="formulario_validacion_estado fas fa-times-circle"></i>
+          </div>
+          <p class="formulario_input_error">
+            La contraseña tiene que ser de 4 a 12 dígitos.
+          </p>
         </div>
-        <p class="formulario_input_error">La contraseña tiene que ser de 4 a 12 dígitos.</p>
-      </div>
 
-      <!-- Grupo:Password 2 -->
-      <div class="formulario_grupo" id="grupo_password2">
-        <label for="password2" class="formulario_label">Contraseña: </label>
-        <div class="formulario_grupo_input">
-            <input id="password2" name="password2" class="formulario_input" type="password" />
+        <!-- Grupo:Password 2 -->
+        <div class="formulario_grupo" id="grupo_password2">
+          <label for="password2" class="formulario_label">Contraseña: </label>
+          <div class="formulario_grupo_input">
+            <input
+              id="password2"
+              name="password2"
+              class="formulario_input"
+              type="password"
+            />
             <i class="formulario_validacion_estado fas fa-times-circle"></i>
+          </div>
+          <p class="formulario_input_error">
+            Ambas contraseñas deben de ser iguales.
+          </p>
         </div>
-        <p class="formulario_input_error">Ambas contraseñas deben de ser iguales.</p>
-      </div>
-      
-      <!-- Grupo:SeleccionPaises -->
-      <div class="cboSelect" id="cboSelect">
-        <label>Selecione su Pais</label>
-        <select>
-          <option>Seleccione su País</option>
-          <option>Argentina</option>
-          <option>Bolivia</option>
-          <option>Brasil</option>
-          <option>Chile</option>
-          <option>Colombia</option>
-          <option>Costa Rica</option>
-          <option>Cuba</option>
-          <option>Ecuador</option>
-          <option>El Salvador</option>
-          <option>Guayana Francesa</option>
-          <option>Granada</option>
-          <option>Guatemala</option>
-          <option>Guayana</option>
-          <option>Haití</option>
-          <option>Honduras</option>
-          <option>Jamaica</option>
-          <option>México</option>
-          <option>Nicaragua</option>
-          <option>Paraguay</option>
-          <option>Panamá</option>
-          <option>Perú</option>
-          <option>Puerto Rico</option>
-          <option>República Dominicana</option>
-          <option>Surinam</option>
-          <option>Uruguay</option>
-          <option>Venezuela</option>
-        </select>
-      </div>
-      
-      <!-- Grupo:Telefono -->
-      <div class="formulario_grupo" id="grupo_telefono">
-        
-        <label for="telefono" class="formulario_label">Telefono: </label>
-        <div class="formulario_grupo_input">
-            <input id="telefono" name="telefono" class="formulario_input" type="text" placeholder="94023910"/>
+
+        <!-- Grupo:SeleccionPaises -->
+        <div class="cboSelect" id="cboSelect">
+          <label>Selecione su Pais</label>
+          <select>
+            <option>Seleccione su País</option>
+            <option>Argentina</option>
+            <option>Bolivia</option>
+            <option>Brasil</option>
+            <option>Chile</option>
+            <option>Colombia</option>
+            <option>Costa Rica</option>
+            <option>Cuba</option>
+            <option>Ecuador</option>
+            <option>El Salvador</option>
+            <option>Guayana Francesa</option>
+            <option>Granada</option>
+            <option>Guatemala</option>
+            <option>Guayana</option>
+            <option>Haití</option>
+            <option>Honduras</option>
+            <option>Jamaica</option>
+            <option>México</option>
+            <option>Nicaragua</option>
+            <option>Paraguay</option>
+            <option>Panamá</option>
+            <option>Perú</option>
+            <option>Puerto Rico</option>
+            <option>República Dominicana</option>
+            <option>Surinam</option>
+            <option>Uruguay</option>
+            <option>Venezuela</option>
+          </select>
+        </div>
+
+        <!-- Grupo:Telefono -->
+        <div class="formulario_grupo" id="grupo_telefono">
+          <label for="telefono" class="formulario_label">Telefono: </label>
+          <div class="formulario_grupo_input">
+            <input
+              id="telefono"
+              name="telefono"
+              class="formulario_input"
+              type="text"
+              placeholder="94023910"
+            />
             <i class="formulario_validacion_estado fas fa-times-circle"></i>
+          </div>
+          <p class="formulario_input_error">
+            El telefono solo puede contener letras, numeros, puntos, guiones y
+            guion bajo.
+          </p>
         </div>
-        <p class="formulario_input_error">El telefono solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
-      </div>
 
+        <!-- Grupo:Terminos y Condiciones -->
+        <div class="formulario_grupo" id="grupo_terminos">
+          <label class="formulario__label">
+            <input
+              class="formulario__checkbox"
+              type="checkbox"
+              name="terminos"
+              id="terminos"
+            />
+            Acepto los Terminos y Condiciones
+          </label>
+        </div>
 
-      
+        <div class="formulario_mensaje" id="formulario_mensaje">
+          <p>
+            <i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor
+            rellena el formulario correctamente.
+          </p>
+        </div>
 
-      
-      
-      <!-- Grupo:Terminos y Condiciones -->
-			<div class="formulario_grupo" id="grupo_terminos">
-				<label class="formulario__label">
-					<input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos">
-					Acepto los Terminos y Condiciones
-				</label>
-			</div>
-
-			<div class="formulario_mensaje" id="formulario_mensaje">
-				<p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
-			</div>
-
-			<div class="formulario_grupo formulario_grupo-btn-enviar">
-				<button type="submit" class="formulario_btn">Enviar</button>
-				<p class="formulario_mensaje-exito" id="formulario_mensaje-exito">Formulario enviado exitosamente!</p>
-			</div>
-
-
-
-
-
-
-     
-      
-      <div>
-        <textarea class="cboTextArea" id="cboTextArea" rows="10"></textarea>
-      </div>
-    </form>
+        <div class="formulario_grupo formulario_grupo-btn-enviar">
+          <button type="submit" class="formulario_btn">Enviar</button>
+          <p class="formulario_mensaje-exito" id="formulario_mensaje-exito">
+            Formulario enviado exitosamente!
+          </p>
+        </div>
+      </form>
+    </main>
+    <script src="js.js"></script>
   </body>
 </html>
