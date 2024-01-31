@@ -4,108 +4,75 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Validacion con JS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,900;1,800&display=swap" rel="stylesheet">
   </head>
   <body>
-    <h1>Formulario-Registro Evento Latinoamerica</h1>
+    <h1>10mo Evento de Videojuegos en Latinoamérica</h1>
     <main>
       <form action="" class="formulario" id="formulario">
+
         <!-- Grupo:Nombre -->
         <div class="formulario_grupo" id="grupo_nombre">
-          <label for="nombre" class="formulario_label"
-            >Nombre y Apellido:
-          </label>
+          <label for="nombre" class="formulario_label">Nombre y Apellido: </label>
           <div class="formulario_grupo_input">
-            <input
-              id="nombre"
-              name="nombre"
-              class="formulario_input"
-              type="text"
-              placeholder="Escribe tu nombre"
-            />
+            <input id="nombre" name="nombre" class="formulario_input" type="text" placeholder="Escribe tu nombre"/>
             <i class="formulario_validacion_estado fas fa-times-circle"></i>
           </div>
-          <p class="formulario_input_error">
-            El nombre tiene que ser de 4 a 16 dígitos y solo puede contener
-            numeros, letras y guion bajo.
-          </p>
+          <p class="formulario_input_error">El nombre tiene que ser de 4 a 16 dígitos y solo puede contener letras .</p>
         </div>
 
         <!-- Grupo:Usuario -->
         <div class="formulario_grupo" id="grupo_usuario">
           <label for="usuario" class="formulario_label">Usuario: </label>
           <div class="formulario_grupo_input">
-            <input
-              id="usuario"
-              name="usuario"
-              class="formulario_input"
-              type="text"
-              placeholder="Escribe tu usuario"
-            />
+            <input id="usuario" name="usuario" class="formulario_input" type="text" placeholder="Escribe tu usuario"/>
             <i class="formulario_validacion_estado fas fa-times-circle"></i>
           </div>
-          <p class="formulario_input_error">
-            El usuario tiene que ser de 4 a 16 dígitos y solo puede contener
-            numeros, letras y guion bajo.
-          </p>
+          <p class="formulario_input_error"> El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo. </p>
         </div>
 
         <!-- Grupo:Correo -->
         <div class="formulario_grupo" id="grupo_correo">
           <label for="correo" class="formulario_label">Correo: </label>
           <div class="formulario_grupo_input">
-            <input
-              id="correo"
-              name="correo"
-              class="formulario_input"
-              type="email"
-            />
+            <input id="correo" name="correo" class="formulario_input" type="email" placeholder="Escribe tu correo"/>
             <i class="formulario_validacion_estado fas fa-times-circle"></i>
           </div>
-          <p class="formulario_input_error">
-            El correo solo puede contener letras, numeros, puntos, guiones y
-            guion bajo.
-          </p>
+          <p class="formulario_input_error"> El correo solo puede contener letras, numeros, puntos, guiones y guion bajo. </p>
         </div>
 
         <!-- Grupo:Password -->
         <div class="formulario_grupo" id="grupo_password">
           <label for="password" class="formulario_label">Contraseña: </label>
           <div class="formulario_grupo_input">
-            <input
-              id="password"
-              name="password"
-              class="formulario_input"
-              type="password"
-            />
+            <input id="password" name="password" class="formulario_input" type="password" />
             <i class="formulario_validacion_estado fas fa-times-circle"></i>
           </div>
-          <p class="formulario_input_error">
-            La contraseña tiene que ser de 4 a 12 dígitos.
-          </p>
+          <p class="formulario_input_error">La contraseña tiene que ser de 4 a 12 dígitos.</p>
         </div>
 
         <!-- Grupo:Password 2 -->
         <div class="formulario_grupo" id="grupo_password2">
-          <label for="password2" class="formulario_label">Contraseña: </label>
+          <label for="password2" class="formulario_label">Repetir Contraseña: </label>
           <div class="formulario_grupo_input">
-            <input
-              id="password2"
-              name="password2"
-              class="formulario_input"
-              type="password"
-            />
+            <input id="password2" name="password2" class="formulario_input" type="password" />
             <i class="formulario_validacion_estado fas fa-times-circle"></i>
           </div>
-          <p class="formulario_input_error">
-            Ambas contraseñas deben de ser iguales.
-          </p>
+          <p class="formulario_input_error">Ambas contraseñas deben de ser iguales.</p>
         </div>
 
         <!-- Grupo:SeleccionPaises -->
-        <div class="cboSelect" id="cboSelect">
-          <label>Selecione su Pais</label>
-          <select>
-            <option>Seleccione su País</option>
+        <div class="formulario_grupo" id="grupo_slcbox">
+          <label for="grupo_slcbox" class="formulario_label">Selecione su Pais</label>
+          <select id="slcbox" name="slcbox" class="formulario_slcbox" >
+            <option><b>Seleccione su País</b></option>
             <option>Argentina</option>
             <option>Bolivia</option>
             <option>Brasil</option>
@@ -139,34 +106,21 @@
         <div class="formulario_grupo" id="grupo_telefono">
           <label for="telefono" class="formulario_label">Telefono: </label>
           <div class="formulario_grupo_input">
-            <input
-              id="telefono"
-              name="telefono"
-              class="formulario_input"
-              type="text"
-              placeholder="94023910"
-            />
+            <input id="telefono" name="telefono" class="formulario_input" type="text" placeholder="Numero Telefonico" />
             <i class="formulario_validacion_estado fas fa-times-circle"></i>
           </div>
-          <p class="formulario_input_error">
-            El telefono solo puede contener letras, numeros, puntos, guiones y
-            guion bajo.
-          </p>
+          <p class="formulario_input_error"> El telefono solo puede contener letras, numeros, puntos, guiones y guion bajo. </p>
         </div>
 
         <!-- Grupo:Terminos y Condiciones -->
         <div class="formulario_grupo" id="grupo_terminos">
           <label class="formulario__label">
-            <input
-              class="formulario__checkbox"
-              type="checkbox"
-              name="terminos"
-              id="terminos"
-            />
+            <input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos" />
             Acepto los Terminos y Condiciones
           </label>
         </div>
 
+        <!-- Mensaje Error llenado de formulario -->
         <div class="formulario_mensaje" id="formulario_mensaje">
           <p>
             <i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor
@@ -176,12 +130,13 @@
 
         <div class="formulario_grupo formulario_grupo-btn-enviar">
           <button type="submit" class="formulario_btn">Enviar</button>
-          <p class="formulario_mensaje-exito" id="formulario_mensaje-exito">
+          <p class="formulario_mensaje_exito" id="formulario_mensaje-exito">
             Formulario enviado exitosamente!
           </p>
         </div>
       </form>
     </main>
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
     <script src="js.js"></script>
   </body>
 </html>
