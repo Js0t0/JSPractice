@@ -25,7 +25,7 @@
             <input id="nombre" name="nombre" class="formulario_input" type="text" placeholder="Escribe tu nombre"/>
             <i class="formulario_validacion_estado fas fa-times-circle"></i>
           </div>
-          <p class="formulario_input_error">El nombre tiene que ser de 4 a 16 dígitos y solo puede contener letras .</p>
+          <p class="formulario_input_error">El nombre solo puede contener letras .</p>
         </div>
 
         <!-- Grupo:Usuario -->
@@ -42,7 +42,7 @@
         <div class="formulario_grupo" id="grupo_correo">
           <label for="correo" class="formulario_label">Correo: </label>
           <div class="formulario_grupo_input">
-            <input id="correo" name="correo" class="formulario_input" type="email" placeholder="Escribe tu correo"/>
+            <input id="correo" name="correo" class="formulario_input" type="email" placeholder="contacto@domi.nio"/>
             <i class="formulario_validacion_estado fas fa-times-circle"></i>
           </div>
           <p class="formulario_input_error"> El correo solo puede contener letras, numeros, puntos, guiones y guion bajo. </p>
@@ -68,38 +68,40 @@
           <p class="formulario_input_error">Ambas contraseñas deben de ser iguales.</p>
         </div>
 
+     
         <!-- Grupo:SeleccionPaises -->
         <div class="formulario_grupo" id="grupo_slcbox">
-          <label for="grupo_slcbox" class="formulario_label">Selecione su Pais</label>
+          <label for="grupo_slcbox" class="formulario_label">Selecione su País</label>
           <select id="slcbox" name="slcbox" class="formulario_slcbox" >
-            <option><b>Seleccione su País</b></option>
-            <option>Argentina</option>
-            <option>Bolivia</option>
-            <option>Brasil</option>
-            <option>Chile</option>
-            <option>Colombia</option>
-            <option>Costa Rica</option>
-            <option>Cuba</option>
-            <option>Ecuador</option>
-            <option>El Salvador</option>
-            <option>Guayana Francesa</option>
-            <option>Granada</option>
-            <option>Guatemala</option>
-            <option>Guayana</option>
-            <option>Haití</option>
-            <option>Honduras</option>
-            <option>Jamaica</option>
-            <option>México</option>
-            <option>Nicaragua</option>
-            <option>Paraguay</option>
-            <option>Panamá</option>
-            <option>Perú</option>
-            <option>Puerto Rico</option>
-            <option>República Dominicana</option>
-            <option>Surinam</option>
-            <option>Uruguay</option>
-            <option>Venezuela</option>
+            <option value="">Seleccione su País</option>
+            <option value="AR">Argentina</option>
+            <option value="BO">Bolivia</option>
+            <option value="BR">Brasil</option>
+            <option value="CL">Chile</option>
+            <option value="CO">Colombia</option>
+            <option value="CR">Costa Rica</option>
+            <option value="CU">Cuba</option>
+            <option value="EC">Ecuador</option>
+            <option value="SV">El Salvador</option>
+            <option value="GF">Guayana Francesa</option>
+            <option value="GD">Granada</option>
+            <option value="GT">Guatemala</option>
+            <option value="GY">Guayana</option>
+            <option value="HT">Haití</option>
+            <option value="HN">Honduras</option>
+            <option value="JM">Jamaica</option>
+            <option value="MX">México</option>
+            <option value="NI">Nicaragua</option>
+            <option value="PY">Paraguay</option>
+            <option value="PA">Panamá</option>
+            <option value="PE">Perú</option>
+            <option value="PR">Puerto Rico</option>
+            <option value="DO">República Dominicana</option>
+            <option value="SR">Surinam</option>
+            <option value="UY">Uruguay</option>
+            <option value="VE">Venezuela</option>
           </select>
+          <p class="formulario_input_error">Selecciona tu País</p>
         </div>
 
         <!-- Grupo:Telefono -->
@@ -114,9 +116,9 @@
 
         <!-- Grupo:Terminos y Condiciones -->
         <div class="formulario_grupo" id="grupo_terminos">
-          <label class="formulario__label">
-            <input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos" />
-            Acepto los Terminos y Condiciones
+          <label class="formulario_label">
+            <input class="formulario_checkbox" type="checkbox" name="terminos" id="terminos" />
+            Acepto los Términos y Condiciones
           </label>
         </div>
 
@@ -124,13 +126,14 @@
         <div class="formulario_mensaje" id="formulario_mensaje">
           <p>
             <i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor
-            rellena el formulario correctamente.
+            rellena el formulario correctamente. Recuerda aceptar términos y condiciones
+            
           </p>
         </div>
 
-        <div class="formulario_grupo formulario_grupo-btn-enviar">
+        <div class="formulario_grupo formulario_grupo_btn_enviar">
           <button type="submit" class="formulario_btn">Enviar</button>
-          <p class="formulario_mensaje_exito" id="formulario_mensaje-exito">
+          <p class="formulario_mensaje_exito" id="formulario_mensaje_exito">
             Formulario enviado exitosamente!
           </p>
         </div>
