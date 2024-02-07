@@ -1,0 +1,110 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<h1>Ejemplo JS & POO</h1>
+		<p>Este es un parrafo</p>
+		
+		<!--Seccion del codigo JS-->
+		<script>
+			/*=======================================================================*/
+			
+			//Se construye al objetoJuan
+			const objetoJuan = {
+				nombre: "Juan",
+				segNombre: "Manuel",
+				apellido: "Pérez",
+				direccion: "Cercado de Lima"
+			}
+			
+			console.log("====================>>>>>>>>>>>");
+			console.log("1.- Imprimimos el objeto completo:");
+			console.log(objetoJuan);
+			console.log("2.- Imprimimos el valor de su atributo o propiedad nombre");
+			console.log(objetoJuan.nombre);
+			console.log("3.- Imprimimos el valor de su atributo o propiedad direccion");
+			console.log(objetoJuan.direccion);
+			console.log("4.- Modificamos el valor de su atributo o propiedad apellido");
+			objetoJuan.apellido = "Santana";
+			console.log("Nuevo apellido:" + objetoJuan.apellido);
+			console.log("5.- Agregar la propiedad 'edad' al objeto");
+			objetoJuan.edad = 30;
+			console.log("Nueva propiedad 'edad':" + objetoJuan.edad);
+			console.log("6.- Preguntamos si el objeto tiene un atributo o propiedad direccion:");
+			console.log(objetoJuan.hasOwnProperty("direccion"));
+			console.log("====================>>>>>>>>>>>");
+
+			//Esta funcion crea a un objeto y devuelve el objeto creado
+			function Perro(nombre1, edad1, raza1) {
+				
+				//Creamos a un objeto generico
+				const nuevoObjetoPerro = Object.create(null);
+				
+				//Le adicionamos atributos al objeto creado
+				//Le asignamos valores a los atributos creados
+				nuevoObjetoPerro.nombre = nombre1;
+				nuevoObjetoPerro.edad = edad1;
+				nuevoObjetoPerro.raza = raza1;
+				
+				//Devolvemos el objeto creado
+				return nuevoObjetoPerro;
+			}
+
+			//Creamos a un objeto Perro y le pasamos los datos: nombre y edad
+			const objetoFirulais = Perro("Firulais", 9, "Pitbull");
+			console.log("1.- Imprimimos el objeto completo:");
+			console.log(objetoFirulais);
+			console.log("====================>>>>>>>>>>>");
+
+			//Definicion de la clase Alumno
+			//Atributos o propiedad: nombre y libros
+			//Metodos u operaciones: buscarLibroPorTitulo
+			//Metodos de encapsulamiento: setLibro y getLibros
+			
+			class Alumno  {
+				
+				//Este metodo sirve para crear los objetos
+				constructor(nombre, libros) {
+					this.nombre = nombre;
+					this.libros = libros || [];
+				}
+
+				// setter
+				set setLibro(libro) {
+					this.libros.push(libro);
+				}
+
+				// getter
+				get getLibros() {
+					return this.libros;
+				}
+
+				// método
+				buscarLibroPorTitulo(titulo) {
+					return this.libros.filter((item) => item.titulo === titulo);
+				}
+			}
+
+			//Creamos un objeto de la clase Alumno => Instanciamos un objeto de la clase Alumno
+			//El objeto se llama "alumnoAbel"
+			const alumnoAbel = new Alumno("Abel");
+			console.log("1.- Creacion del objeto Alumno:");
+			console.log(alumnoAbel);
+			
+			//Adicionamos 3 elementos al atributo o propiedad libros
+			
+			alumnoAbel.setLibro = { titulo: "JavaScript", autor: "Marcela Paz 1" };
+			alumnoAbel.setLibro = { titulo: "JavaScript", autor: "Marcela Paz 2" };
+			alumnoAbel.setLibro = { titulo: "Papelucho 2", autor: "Marcela Paz" };
+			alumnoAbel.setLibro = { titulo: "El principito", autor: "Antoine de Saint-Exupéry"};
+
+			console.log("2.- Verificamos que se han agregados los 3 libros");
+			console.log(alumnoAbel);
+
+			console.log("3.- Utilizamos el metodo buscarLibroPorTitulo y buscamos el titulo Papelucho");
+			console.log(alumnoAbel.buscarLibroPorTitulo("JavaScript"));
+			
+		</script>
+	</body>
+</html>

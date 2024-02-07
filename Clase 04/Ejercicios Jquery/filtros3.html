@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Filtros - Exclusión de elemento, primer hijo, último hijo</title>
+  </head>
+  <body>
+
+  	<ul>
+  		<li>lista 1</li>
+  		<li>lista 2</li>
+  		<li>lista 3</li>
+  		<li>lista 4</li>
+  		<li>lista 5</li>
+  	</ul>
+   
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        //select todos menos el primero ni el ultimo
+      	//$('li:not(:first,:last)').css('background','#9cf');
+        //solo al primer elemento de la lista no ordenada
+        //$('li:first-child').css('background','#9cf');
+        //solo al ultimo elemento de la lista no ordenada
+        //$('li:last-child').css('background','#9cf');
+        //el indice no arranca desde cero sino desde 1
+        $('ul li:nth-child(2)').css('background','#9cf');
+      });
+    </script>
+  </body>
+</html>

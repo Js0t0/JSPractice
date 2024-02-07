@@ -7,12 +7,13 @@ const expresiones = {
 	usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
 	password: /^.{4,12}$/, // 4 a 12 digitos.
 	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-	telefono: /^\d{7,14}$/ // 7 a 14 numeros.
+	telefono: /^\d{6,14}$/ // 7 a 14 numeros.
 }
 const campos = {
 	usuario: false,
 	nombre: false,
 	password: false,
+	password2: false,
 	correo: false,
 	telefono: false,
 	slcbox: false
@@ -88,12 +89,12 @@ const validarPassword2 = ()=>{
 			document.querySelector(`#grupo_password2 i`).classList.add('fa-times-circle');
 			document.querySelector(`#grupo_password2 i`).classList.remove('fa-check-circle');
 			document.querySelector(`#grupo_password2 .formulario_input_error`).classList.add('formulario_input_error_activo');
-			campos['password'] = false;
+			campos['password2'] = false;
 		}else{
 			document.getElementById(`grupo_password2`).classList.remove('formulario_grupo_incorrecto');
 			document.getElementById(`grupo_password2`).classList.add('formulario_grupo_correcto');
-			document.querySelector(`#grupo_password2 i`).classList.add('fa-check-circle');
 			document.querySelector(`#grupo_password2 i`).classList.remove('fa-times-circle');
+			document.querySelector(`#grupo_password2 i`).classList.add('fa-check-circle');
 			document.querySelector(`#grupo_password2 .formulario_input_error`).classList.remove('formulario_input_error_activo');
 			campos['password'] = true;
 		}	
@@ -112,15 +113,17 @@ selects.forEach((select)=>{
 	
 });
 
-
+const jsConfetti = new JSConfetti();
 
 formulario.addEventListener('submit', (e) => {
 	e.preventDefault();
 	const terminos = document.getElementById('terminos');
+	
 	if(campos.usuario && campos.nombre && campos.password && campos.correo && campos.telefono && terminos.checked && campos.slcbox ){
 		formulario.reset();
 		document.getElementById('formulario_mensaje').classList.remove('formulario_mensaje_activo');
 		document.getElementById('formulario_mensaje_exito').classList.add('formulario_mensaje_exito_activo');
+		jsConfetti.addConfetti();
 		setTimeout(() => {
 			document.getElementById('formulario_mensaje_exito').classList.remove('formulario_mensaje_exito_activo');
 		}, 5000);

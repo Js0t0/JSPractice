@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        
+        <h1>Clase Javascript / POO / Ejemplos básicos</h1>
+        <hr>
+        <p>Crear a un perro</p><br>
+        <label for="txtNombrePerro">Nombre:</label>
+        <input id="txtNombrePerro" type="text" placeholder="Ingrese el nombre del perro"><br>
+        <label for="txtRazaPerro">Raza:</label>
+        <input id="txtRazaPerro" type="text" placeholder="Ingrese la raza del perro"><br>
+        <label for="txtPropietarioPerro">Propietario:</label>
+        <input id="txtPropietarioPerro" type="text" placeholder="Ingrese el nombre del propietario del perro"><br>
+
+        <button onclick="crearPerro()">Crear perro</button>
+
+        <!-- Seccion de codigo JS-->
+        <script>
+
+            //Definimos la clase Perro
+            class Perro{
+                constructor(nombre1, raza1, propietario1){
+                    this.nombre = nombre1;
+                    this.raza = raza1;
+                    this.propietario = propietario1;
+                }
+
+                ladrar() {
+                    //console.log(`El perro ${this.nombre} ha ladrado`);
+                    alert(`El perro ${this.nombre} ha ladrado`);
+                }
+
+                comer() {
+                    //console.log(`El perro ${this.nombre} ha comido`);
+                    alert(`El perro ${this.nombre} ha comido`);
+                }
+            }
+
+            function crearPerro(){
+
+                const nombrePerro = document.getElementById("txtNombrePerro").value;
+                const razaPerro = document.getElementById("txtRazaPerro").value;
+                const propietarioPerro = document.getElementById("txtPropietarioPerro").value;
+
+                //Creamos un objeto de la clase Perro (instanciar una clase)
+                const perro1 = new Perro(nombrePerro, razaPerro, propietarioPerro);
+                console.log(perro1);
+                perro1.comer();
+                perro1.ladrar();
+            }
+
+        </script>
+    </body>
+</html>

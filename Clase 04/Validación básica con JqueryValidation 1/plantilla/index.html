@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Validación con jQuery.validate</title>
+  <script src="../js/jquery-1.9.1.js" type="text/javascript"></script>
+  <script src="../js/jquery.validate.js" type="text/javascript"></script>
+  
+  <style>
+    body {
+      background-color: #D8D8D8;
+    }
+
+    #caja_form {
+      height: 350px;
+      width: 470px;
+      /*border: ridge 1px;*/
+      margin: 0 auto;
+      margin-top: 50px;
+    }
+
+    table#tabla_form {
+      /*width: 50%;*/
+      text-align: left;
+    }
+
+    span {
+      color: #DF0101;
+      padding-left: 5px;
+      display: inline;
+      font-size: 11px;
+      font-style: italic;
+    }
+
+    input[type=text] {
+      /*border: 1px dotted #999;*/
+      border-radius: 2px;
+      display: block;
+    }
+  </style>
+
+  <script>
+    
+    $(document).ready(function () {
+      
+      $("#formulario").validate();
+      
+      $("#first_name").rules("add", {
+        required: true,
+        messages: {
+          required: "<span>Este campo es obligatorio</span>"
+        }
+      });
+
+      $("#last_name").rules("add", {
+        required: true,
+        messages: {
+          required: "<span>Este campo es obligatorio</span>"
+        }
+      });
+
+      $("#cedula").rules("add", {
+        required: true,
+        messages: {
+          required: "<span>Este campo es obligatorio</span>"
+        }
+      });
+      
+      $("#tlf").rules("add", {
+        required: true,
+        messages: {
+          required: "<span>Este campo es obligatorio</span>"
+        }
+      });
+      $('#btn').click(function () {
+        $("#formulario").valid();
+        $("#formulario").submit();
+      });
+    });
+  </script>
+
+</head>
+
+<body>
+  <div id="caja_form">
+    
+    <form id="formulario" action="#">
+      
+      Nombre: <input type="text" name="first_name" id="first_name" /> <br />
+      
+      Apellido: <input type="text" name="last_name" id="last_name" /> <br />
+      
+      Cédula: <input type="text" name="cedula" id="cedula"  /> <br />
+      
+      Teléfono: <input type="text" name="tlf" id="tlf"  /> <br /> <br />
+      
+      <input type="button" id="btn"  value="Guardar" />
+      
+      <input type="reset" value="Borrar">
+
+    </form>
+
+  </div>
+</body>
+
+</html>

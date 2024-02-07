@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <!--Importando la libreria del Jquery-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    </head>
+    
+    <body>
+        
+        <h2>Clase JavaScript - Jquery</h2>
+        <p>Este es un 1er parrafo</p>
+        <p>Este es un 2do parrafo</p>
+        <p>Este es un 3er parrafo</p>
+        <button id="btnOcultar">Ocultar los parrafos</button>
+        <button id="btnMostrar">Mostrar los parrafos</button>
+        
+        <!--Seccion donde colocamos el codigo JS-->
+        <script>
+            
+            //Nos aseguramos que el codigo se ejecute solo cuando
+            //se ha cargado completamente la pagina
+            $(document).ready(function(){
+                
+                //Seleccionamos a todos los elementos "button"
+                //Le asignamos unas acciones cuando realicen un click
+                //$("button").click(function(){
+                
+                //Seleccionamos al elemento con id=btnOcultar
+                //Le asignamos unas acciones cuando realicen un click
+                $("#btnOcultar").click(function(){
+                    //Seleccionamos a todos los elementos "p"
+                    //Ocultamos los elementos seleccionados
+                    $("p").hide();
+                });
+
+                //Seleccionamos al elemento con id=btnMostrar
+                //Le asignamos unas acciones cuando realicen un click
+                $("#btnMostrar").click(function(){
+                    //Seleccionamos a todos los elementos "p"
+                    //Mostramos los elementos seleccionados
+                    $("p").show();
+                });
+
+            });
+        </script>
+
+    </body>
+</html>

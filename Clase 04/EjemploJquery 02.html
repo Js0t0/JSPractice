@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>Javascript: jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+
+    <style>
+        table,
+        th,
+        td {
+
+            border: 1px solid black;
+
+        }
+
+        tr.nice td {
+            background: #FAFAD2;
+        }
+
+        tr.mouseon td {
+
+            background: #AA11EE;
+
+        }
+
+        /*div info de la imagen*/
+        #infoImg {
+            left: 500px;
+            position: relative;
+            top: -484px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <script>
+        $(document).ready(function () {
+            console.log('%cjQuery activo', 'background-color:#EEADDA;color:black');
+
+            $("#info0").on("click", function () {
+                $(this).text("Hola gatos");
+                alert("color:" + $(".cls0").css("color"));
+                $(".cls0").text("Hola dinosaurios");
+            });
+
+            $("#info1").click(function () {
+                $(this).html("<h2>Hola usuarios</h1>");
+
+            });
+
+            $("#btn0").click(function () {
+                document.getElementById("info2").innerHTML = "<h2>Usando getElementById</h2>";
+            });
+
+            $("#prrf0").css("background-color", "steelblue");
+
+            $("#prrf1").on("click", function () {
+                $(this).css("color", "red");
+            });
+
+
+            $(".cls1").css("background-color", "gray");
+            $(".cls1").css("color", "red");
+            $(".cls1").css("fontSize", "19px");
+            $(".cls1").css("padding", "7px 13px");
+            var dt0 = document.getElementsByClassName("cls1")[0].innerHTML;
+            console.log("Texto obtenido:" + dt0);
+            console.log("Texto obtenido:" + $(".cls1").text());
+
+            $("td").css("padding", "12px 2.6px");
+            $("h3, th").css("background-color", "lime");
+            $("ul li.villano").css("color", "#00FFEE");
+            $("ul li.antiheroe").css("fontSize", "24px");
+            $("#heroes").css("background-color", "#0FFACA");
+            $("#heroes").css("color", "#AAC00D");
+            $("#heroesInfo").css("color", "black");
+            $("#heroesInfo").text("Color de fondo:" + $("#heroes").css("background-color") + ", color de texto:" + $("#heroes").css("color"));
+            $("h4 + p").css("background-color", "magenta");
+            $("#info3 ~h4,h5").css("background-color", "#DEDAAF");
+
+            $("#info4 > *").css("color", "red");
+            $("#info4 > *").css("font-size", "18px");
+            $("#info4 > *").css("font-style", "Italic");
+            $("div:has(h6)").css("text-decoration", "underline");
+            $("div[id]").css("border", "12px solid blue");
+            $("div[class]").css("border", "2px solid magenta");
+            $("li[class='unknown']").css("color", "lime");
+            $("li[class='unknown']").css("font-size", "27px");
+            $("li[class^='unknown']").css("border", "2px solid gray");
+            $("li[class$='tn']").css("background-color", "red");
+            $("li:contains('romero')").css("background-color", "cyan");
+            $("li:contains('rotario')").css("background-color", "steelblue");
+
+            $("#info5 tr:odd").addClass("nice");
+            $("#info5 tr").mouseover(function () { $(this).addClass("mouseon"); });
+            $("#info5 tr").mouseout(function () { $(this).removeClass("mouseon"); });
+
+            $('p:last').css({ "background-color": "#11EEAA", "color": "purple" });
+            $("p span:first-child").css("background-color", "#CCEEC0");
+            $("div span:last-child").css("border", "12px solid white");
+            $("div span:last-child").css("text-decoration", "underline");
+            $("div:nth-child(1)").css("background-color", "orange");
+
+            $("#primerDiv").click(function () {
+                $("#primerDiv").hide("1000");
+            });
+
+            $("#segundoDiv").click(function () {
+                if ($('#primerDiv').is(':visible')) {
+                    $('#primerDiv').hide("1000");
+                } else {
+                    $('#primerDiv').show("1000");
+                }
+            });
+
+
+
+            $("#btn1").click(function () {
+                if ($('#tercerDiv').is(':visible')) {
+                    $('#tercerDiv').hide("1000");
+                    $(this).val("Mostrar");
+                } else {
+                    $('#tercerDiv').show("1000");
+                    $(this).val("Ocultar");
+                }
+            });
+
+
+            $("#img").on({
+                mouseenter: function () {
+                    var src = $(this).attr('src');
+                    var cont = src.split('/');
+                    var imagen = cont[cont.length - 1];
+                    $("#infoImg").css("background-color", "orange");
+                    $("#imgInfo").html("Dirección de la imagen:" + $(this).attr('src') + "<br/>Nombre y extensión de la imagen:" + imagen + "<br/>Nombre:" + imagen.split('.')[0] + "<br/>Extensión:" + imagen.split('.')[1] + "<br/>Título:" + $(this).attr('title') + "<br/>Alt: " + $(this).attr('alt') + "<br/>Alto:" + $(this).height() + "px<br/>Ancho:" + $(this).width() + "px");
+                }
+                ,
+                mouseleave: function () {
+                    $("#infoImg").css("background-color", "white");
+                    $("#imgInfo").text("");
+                }
+
+            });
+
+            $("#btn2").on("click", activaBtn2);
+            $("#btn3").bind("click", activaBtn3);
+
+            function activaBtn2() {
+                $("#info6").html("<h2>Has presionado el botón on()</h2>");
+            }
+
+            function activaBtn3() {
+                $("#info6").html("<h2>Has presionado el botón bind()</h2>");
+            }
+
+
+            $("#btn4").on({
+                click: function () {
+                    alert($(".texto").text());
+                },
+                mouseleave: function () {
+                    $(this).css("background-color", "steelblue");
+                    $(this).css("color", "white");
+                },
+                mouseenter: function () {
+                    $(this).css("background-color", "black");
+                    $(this).css("color", "red");
+                }
+            });
+
+
+            $("#btn5").on({
+                click: function () {
+                    alert($("#texto").text());
+                },
+                mouseleave: function () {
+                    $(this).css("background-color", "steelblue");
+                    $(this).css("color", "white");
+                },
+                mouseenter: function () {
+                    $(this).css("background-color", "black");
+                    $(this).css("color", "red");
+                }
+            });
+
+            $("button").css("background-color", "steelblue");
+            $("button").css("color", "white");
+            $("button").css("border", "3px solid gray");
+
+            $("input").on("click", function () {
+                $(this).val("");
+            });
+
+
+            $("#btn6").on({
+                click: function () {
+                    if ($.isNumeric($("#txtNum").val())) {
+                        console.log('%cEs numerico: ' + $("#txtNum").val(), 'background-color:black;color:white');
+                        $("#prrf3").text($("#txtNum").val() + " es numérico");
+                    }
+                },
+                mouseleave: function () {
+                    $(this).css("background-color", "steelblue");
+                    $(this).css("color", "white");
+                },
+                mouseenter: function () {
+                    $(this).css("background-color", "black");
+                    $(this).css("color", "red");
+                }
+            });
+
+            $("#txtTexto").bind('blur', onBlurEvent);
+            $("#txtTexto").bind('focus', onFocusEvent);
+            $("#txtTexto").bind('onmousedown', onMDownEvent);
+            $("#txtTexto").bind('onmouseup', onMUpEvent);
+            $("#txtTexto").bind('change', onChangeEvent);
+            $("#txtTexto").bind('keypress', onKeyPressEvent);
+            $("#txtTexto").bind('keyup', onKeyUpEvent);
+
+            function onBlurEvent() {
+                $("#prrf4").html("Evento onblur");
+            }
+
+            function onFocusEvent() {
+                $("#prrf4").html("Evento focus");
+            }
+
+            function onMDownEvent() {
+                $("#prrf4").html("Evento onmousedown");
+            }
+
+            function onMUpEvent() {
+                $("#prrf4").html("Evento onmouseup");
+            }
+
+            function onChangeEvent() {
+                $("#prrf4").html("Evento change");
+            }
+
+            function onKeyPressEvent() {
+                $("#prrf4").html("Evento keypress");
+            }
+
+            function onKeyUpEvent() {
+                $("#prrf4").html("Evento keyup");
+            }
+
+            $("#img2").bind('mouseover', mouseOverMe).bind('mouseout', mouseOutMe);
+
+
+            function mouseOverMe() {
+                $("#prrf5").html("Evento mouseover");
+            }
+
+            function mouseOutMe() {
+                $("#prrf5").html("Evento mouseout");
+            }
+
+            $("#btn7").on("click", function () {
+                alert(document.activeElement)
+            });
+
+            $("#btn8").on("click", function () {
+                alert(document.addEventElement())
+            });
+
+            $("#btn9").on("click", function () {
+                alert(document.adoptNode)
+            });
+
+            $("#btn10").on("click", function () {
+                alert(document.anchors)
+            });
+
+            $("#btn11").on("click", function () {
+                alert(document.applets)
+            });
+
+            $("#btn12").on("click", function () {
+                alert(document.baseURI)
+            });
+
+            $("#btn13").on("click", function () {
+                alert(document.close())
+            });
+
+
+            $("#btn14").on("click", function () {
+                alert(document.cookie)
+            });
+
+            $("#btn15").on("click", function () {
+                alert(document.createAttribute)
+            });
+
+            $("#btn16").on("click", function () {
+                alert(document.createComment())
+            });
+
+            $("#btn17").on("click", function () {
+                alert(document.applets)
+            });
+
+            $("#btn18").on("click", function () {
+                alert(document.body)
+            });
+
+            $("#btn19").on("click", function () {
+                alert(document.doctype)
+            });
+
+            $("#btn20").on("click", function () {
+                alert(document.documentURI)
+            });
+
+            $("#btn21").on("click", function () {
+                alert(document.domain)
+            });
+
+            $("#btn23").on("click", function () {
+                alert(document.head)
+            });
+
+            $("#btn24").on("click", function () {
+                alert(document.title)
+            });
+
+            $("#btn25").on("click", function () {
+                alert(document.URL)
+            });
+
+
+            $("#btn26").on("click", function () {
+                alert(document.readyState)
+            });
+
+            $("#btn27").click(function () {
+                alert("Servidor> "
+                    + location.host
+                    + "\nNombre del servidor> "
+                    + location.hostname
+                    + "\nHref> " + location.href
+                    + "\nProtocolo> " + location.protocol);
+            });
+
+            $("#btn28").on("click", function () {
+                alert("Producto> " + navigator.product
+                    + "\nPlataforma> " + navigator.platform
+                    + "\nLenguaje> " + navigator.language
+                    + "\nAgente> " + navigator.userAgent
+                    + "\nEn línea> " + navigator.onLine);
+            });
+
+            $("#btn29").on("click", function () {
+                alert("Alto> " + screen.height
+                    + "\nAncho> " + screen.width
+                    + "\nAlto> " + screen.availHeight
+                    + "\nAncho> " + screen.availWidth);
+            });
+
+            $("#btn30").on("click", function () {
+                alert("No. urls> " + window.history.length);
+            });
+
+            $("#btn31").on("click", function () {
+                window.history.back();
+            });
+
+            $("#btn32").on("click", function () {
+                window.history.forward();
+            });
+
+            $("#btn33").on("click", function () {
+                window.history.go(-2);
+            });
+
+
+            var jsonText = '{"nombre":"Fernando","apellido":"Carraro"}';
+            var objText = JSON.parse(jsonText);
+
+            document.getElementById("btn34").onclick = function () {
+                alert("Nombre: " + objText.nombre
+                    + "\nApellido: " + objText.apellido);
+            }
+
+            document.getElementById("prrf6").innerHTML = "Nombre: " + objText.nombre + " , Apellido: " + objText.apellido;
+
+            $("#btn35").click(function () {
+                alert("Nombre: " + objText.nombre + "\nApellido: " + objText.apellido);
+                $("#prrf7").text("Nombre: " + objText.nombre + " , Apellido: " + objText.apellido);
+            });
+
+
+            var verTexto = function () {
+                document.getElementById("prrf8").innerHTML = document.getElementById("txtTexto2").value;
+            }
+
+            document.getElementById("txtTexto2").onkeypress = verTexto;
+            document.getElementById("txtTexto2").onkeyup = verTexto;
+            document.getElementById("txtTexto2").onclick = function () {
+                document.getElementById("txtTexto2").value = "";
+                document.getElementById("prrf9").innerHTML = "";
+            }
+
+
+            var obtenerObjeto = function () {
+                alert("Nada");
+            }
+
+
+            var Persona = function (nombre, apellido, edad) {
+                this.nombre = nombre;
+                this.apellido = apellido;
+                this.edad = edad;
+            }
+
+
+            document.getElementById("btn36").onclick = function () {
+                var p = new Persona("Fernando", "Carraro", 35);
+                alert("Nombre: " + p.nombre
+                    + "\nApellido: " + p.apellido
+                    + "\nEdad: " + p.edad);
+                document.getElementById("btn36").style.backgroundColor = "white";
+                document.getElementById("btn36").style.color = "#FF00A1";
+            };
+
+
+
+            document.getElementById("txtTexto3").addEventListener("mouseup", function () {
+                document.getElementById("txtTexto3").style.backgroundColor = "white";
+                document.getElementById("txtTexto3").style.color = "#FF00A1";
+                document.getElementById("prrf9").innerText = "Hola, nuevo color: " + document.getElementById("txtTexto3").style.color;
+            }, false);
+
+
+            document.getElementById("btn37").onclick = function () {
+                var nombre = prompt("Nombre:");
+                var apellido = prompt("Apellido:");
+                var edad = parseInt(prompt("Edad:"));
+                var p1 = new Persona(nombre, apellido, edad);
+                alert("Nombre: " + p1.nombre
+
+
+                    + "\nApellido: " + p1.apellido
+                    + "\nEdad: " + p1.edad);
+            };
+
+            var decirHola = function (param1) {
+                return document.getElementById("txtTexto4").innerHTML = "Hola " + param1 + " , hoy es " + new Date();
+            };
+
+            decirHola("Fernando Carraro");
+
+            var arreglo = new Array("Ariel", "Fernando", "Tomas", "Uriel");
+            var total = "";
+            document.getElementById("btn38").onclick = function () {
+                //alert(arreglo+" Tipo: "+typeof(arreglo));
+                for (var a in arreglo) {
+                    total += "Hola " + arreglo[a] + "<br/>";
+                }
+
+                //alert(total);
+                document.getElementById("txtTexto6").innerHTML = total;
+            };
+
+
+            $("#txtTexto7").css("font-size", "24.5px").css("font-family", "Courier").css("text-align", "center");
+
+
+        });
+    </script>
+
+
+    <h1>Usando jQuery</h1>
+    <hr />
+    <p>1. Uso de on(), text(), css()</p>
+    <div id="info0">Clic aquí
+    </div>
+    <p class="cls0" style="color:blue;">Hola</p>
+    <p>2. Uso de click(), html()</p>
+    <div id="info1">Clic aquí</div>
+    <p>3. Usando click(), getElementById() </p>
+    <div id="info2">Hola</div>
+    <button id="btn0">Clic aquí</button>
+    <p id="prrf0">4. Uso de css()</p>
+    <p id="prrf1">Hola usuario,da clic aquí</p>
+    <p class="cls1">Este es un párrafo</p>
+    <h3>Tabla</h3>
+    <table border="1">
+        <tr>
+            <th>Alpha</th>
+            <th>Phi</th>
+            <th>Omega</th>
+        </tr>
+        <tr>
+            <td>Demons Blazzer</td>
+            <td>Spirit</td>
+            <td>Protector</td>
+        </tr>
+    </table>
+    <h3>Lista</h3>
+    <ul>
+        <li class="heroe">Supercat</li>
+        <li class="villano">Dr. Dog</li>
+        <li class="antiheroe">Ninja Cat</li>
+    </ul>
+    <div id="heroes">
+        <h2>Capitán Tormenta</h2>
+        <div id="heroesInfo"></div>
+    </div>
+    <h4>Un informe pelicano</h4>
+    <p>Con Brad Callaway</p>
+
+    <div>
+        <h3 id="info3">El estuche en el peluche</h3>
+        <h4>Un pequeño intento en el caso Hill Valley</h4>
+        <h5>Torres negras, torres blancas</h5>
+    </div>
+    <div>
+        <h4>Lista</h4>
+        <ul id="info4">
+            <li class="unknown">Beyonder</li>
+            <li class="villian">Galactus</li>
+            <li class="hero">Franklin Richards</li>
+            <li class="hero">Reed Richards</li>
+        </ul>
+    </div>
+    <div class="cls2">
+        <h4>Hola, aqui estoy !!!</h4>
+        <h6>Un link sin enlace a nada</h6>
+    </div>
+    <div id="fantasma">
+        <ul>
+            <li class="d0tn">roman</li>
+            <li class="d1tm">romero</li>
+            <li class="d2tl">rotario</li>
+        </ul>
+    </div>
+
+    <div id="info5">
+        <p>Hola</p>
+        <table>
+            <tr>
+                <th>Uno</th>
+                <th>Dos</th>
+                <th>Tres</th>
+            </tr>
+            <tr>
+                <td>Yo</td>
+                <td>Superyo</td>
+                <td>Ello</td>
+            </tr>
+
+        </table>
+    </div>
+
+    <p>5. Más uso de css()</p>
+    <div id="primerDiv">
+        <h4>Título</h4>
+        <p id="prrf2">Hola
+            <span>y adiós</span>
+        </p>
+    </div>
+    <div id="segundoDiv">Clic para mostrar/ocultar div de arriba</div>
+    <hr />
+    <div id="tercerDiv">
+        <h1>Hola</h1>
+    </div>
+    <input type="button" id="btn1" value="Ocultar" />
+    <hr />
+
+    <p>6. Más uso de css()</p>
+    <img src="/home/fer/Imágenes/giphy.gif" alt="Pokemon GO" title="Pokemon GO" id="img" />
+    <div id="infoImg">
+        <h2>Información de la imagen</h2>
+        <p id="imgInfo"></p>
+    </div>
+
+    <p>7. Uso de on(), bind()</p>
+    <div id="info6">
+
+    </div>
+    <button id="btn2">Clic con on()</button>
+    <button id="btn3">Clic con bind()</button>
+    <hr />
+    <p>8. Obtener texto (class)</p>
+    <p class="texto" contenteditable>¡Edítame!</p>
+    <button id="btn4">Obtener texto</button>
+
+    <p>9. Obtener texto (id)</p>
+    <p id="texto" contenteditable>¡Edítame!</p>
+    <button id="btn5">Obtener texto</button>
+    <p>10. Es numérico (?)</p>
+    Teclea un número:
+    <input type="text" id="txtNum" value="" maxlength="5" style="margin: -2px;border: 3px solid black; width: 44px;" />
+    <button id="btn6">Comprobar</button>
+    <p id="prrf3"></p>
+    <p>11. Eventos</p>
+    <p id="prrf4"></p>
+    Texto: <input type="text" id="txtTexto" value="" />
+    <p>11. Eventos mouseout, mouseover</p>
+    <p id="prrf5"></p>
+    <img src="/home/fer/Imágenes/señorburns.png" id="img2" />
+    <p>12. DOM Document</p>
+    <button id="btn7">1</button>
+    <button id="btn8">2</button>
+    <button id="btn9">3</button>
+    <button id="btn10">4</button>
+    <button id="btn11">5</button>
+    <button id="btn12">6</button>
+    <button id="btn13">7</button>
+    <button id="btn14">8</button>
+    <button id="btn15">9</button>
+    <button id="btn16">10</button>
+    <button id="btn17">11</button>
+    <button id="btn18">12</button>
+    <button id="btn19">13</button>
+    <button id="btn20">14</button>
+    <button id="btn21">15</button>
+    <button id="btn22">16</button>
+    <button id="btn23">17</button>
+    <button id="btn24">18</button>
+    <button id="btn25">19</button>
+    <button id="btn26">20</button>
+    <hr />
+    <p>13. DOM (Location)</p>
+    <button id="btn27">Obtener</button>
+    <p>14. DOM (Navigator)</p>
+    <button id="btn28">Obtener</button>
+    <p>15. DOM (Screen)</p>
+    <button id="btn29">Obtener</button>
+    <p>16. DOM (History)</p>
+    <button id="btn30">Obtener</button>
+    <button id="btn31">Back()</button>
+    <button id="btn32">Forward()</button>
+    <button id="btn33">Go()</button>
+    <p>17. JSON usando javascript</p>
+    <p id="prrf6"></p>
+    <button id="btn34">Ver JSON</button>
+    <p>18. JSON usando jQuery</p>
+    <p id="prrf7"></p>
+    <button id="btn35">Ver JSON</button>
+    <p>19. Introduce texto</p>
+    <p id="prrf8"></p>
+    Introducir texto
+    <input type="text" id="txtTexto2" value="" />
+    <p>19. POO con JS</p>
+    <button id="btn36">Obtener objeto</button>
+    <p>20. JS</p>
+    <p id="prrf9"></p>
+    <input type="text" id="txtTexto3" onmouseup="cambioColor(); muestraTexto();" value="Hola" />
+    <p>21. JS</p>
+    <button id="btn37">Clic</button>
+
+    <hr />
+    <p>22. Imagen</p>
+    <img src="/home/fer/Imágenes/Ateo arrepentido2.jpg" id="img3" height="360" width="230" />
+    <div id="miDiv"></div>
+    <form id="miForm" name="miForm">
+        <select id="miSelector" name="miSelector" onchange="cambioImagen(); myFunction();">
+            <option value="Ocultar">Ocultar</option>
+            <option value="Mostrar">Mostrar</option>
+        </select>
+    </form>
+    <div id="demo"></div>
+    <script type="text/javascript">
+
+        var cambioImagen = function () {
+            if (document.getElementById("miSelector").value == "Ocultar") {
+                //alert("Ocultar");
+                $("#img3").hide(2000);
+            } else {
+                //alert("Mostrar");
+                $("#img3").show(2000);
+            }
+        };
+
+
+        function myFunction() {
+            var x = document.getElementById("miSelector").value;
+            document.getElementById("demo").innerHTML = "Tu elegiste: " + x;
+        }
+
+    </script>
+    <hr />
+
+
+    <p>23. Cambio</p>
+    <div id='Trailer5' style='display:none'>
+        <iframe width='700' height='430'
+            src='http://www.youtube-nocookie.com/embed/vEO9iLWBWvw?theme=light&amp;version=3&amp;rel=0&amp;ps=blogger&amp;iv_load_policy=3&amp;showinfo=0'
+            frameborder='0' allowfullscreen></iframe>
+        <h3>July 12th, 2013</h3>
+
+    </div>
+    <div id='Trailer10' style='display:none'>
+        <iframe width='700' height='430'
+            src='http://www.youtube-nocookie.com/embed/Fkbm8a40TC4?theme=light&amp;version=3&amp;rel=0&amp;ps=blogger&amp;iv_load_policy=3&amp;showinfo=0'
+            frameborder='0' allowfullscreen></iframe>
+        <h3>June 20th, 2014</h3>
+
+    </div>
+    <select onChange="playVideo(this)">
+        <option value="Trailer5">Terms and Conditions may Apply</option>
+        <option value="Trailer10">How to Train your Dragon 2</option>
+    </select>
+    <div id='videoPlayback'>
+        <iframe width='700' height='430'
+            src='http://www.youtube-nocookie.com/embed/Fkbm8a40TC4?theme=light&amp;version=3&amp;rel=0&amp;ps=blogger&amp;iv_load_policy=3&amp;showinfo=0'
+            frameborder='0' allowfullscreen></iframe>
+    </div>
+    </br>
+
+    <h3>Movie "in Theaters" Date Shown Here</h3>
+
+    <script type='text/javascript'>
+        function playVideo(a) {
+            a = document.getElementById(a.value);
+            b = document.getElementById("videoPlayback");
+            b.innerHTML = a.innerHTML;
+        }
+    </script>
+
+    <hr />
+
+    <p>24. Cambio texto con select</p>
+    <select id="usgsfeed" name="usgsfeed" size="1" onchange="display_usgs_change();">
+        <option value="usgs_hour">Past hour, all earthquakes</option>
+        <option value="usgs_day" selected="selected">Past day, magnitude > 1</option>
+        <option value="usgs_week">Past week, magnitude > 2.5</option>
+        <option value="usgs_month">Past month, magnitude > 2.5</option>
+        <option value="none">None</option>
+    </select>
+    <script>
+        function display_usgs_change() {
+            //document.getElementById("dummy").innerHTML = event.target.value;
+            var x2 = document.getElementById("usgsfeed").value;
+            document.getElementById("dummy").innerHTML = "Tu elegiste: " + x2;
+        }
+    </script>
+    <div id="dummy"></div>
+    <p>25. Funciones</p>
+    <h3 id="txtTexto4"></h3>
+    <p>26. Funciones</p>
+    <p id="txtTexto5"></p>
+
+    <select id="miSelector2" name="miSelector2" size="1" onchange="cambioValor();">
+        <option value="Java">Java</option>
+        <option value="Ceylon">Ceylon</option>
+    </select>
+
+    <script>
+        var cambioValor = function () {
+            return document.getElementById("txtTexto5").innerHTML = "Lenguaje elegido: " + document.getElementById("miSelector2").value;
+        };
+    </script>
+    <p>27. Arreglos</p>
+    <p id="txtTexto6"></p>
+    <button id="btn38">Activar</button>
+    <p>28. Más estilos css()</p>
+    <p id="txtTexto7">Hola</p>
+
+</body>
+
+</html>

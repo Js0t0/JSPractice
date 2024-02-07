@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <!--Incorporamos la libreria Jquery mediante CDN-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+    <h2>Clase JavaScript - Jquery</h2>
+    <p id="parrafo1">Este es un parrafo - Linea 1</p>
+    <p id="parrafo2">Este es otro parrafo - Linea 2</p>
+    <p id="parrafo3">Este es otro parrafo - Linea 3</p>
+    <button id="boton1">Click aqui 1</button>
+    <button id="boton2">Click aqui 2</button>
+    <button id="boton3">Click aqui 3</button>
+    <br>
+    <br>
+    <input id="txtMensaje" type="text"> => <input id="txtAcciones" type="text" disabled>
+
+    <!--Codigo del JS-->
+    <script>
+
+        //Garantizamos que este codigo solo se ejecute cuando
+        //la pagina ha cargado completamente
+        $(document).ready(function () {
+
+            //Seleccionamos a un elemento cuyo id=boton1
+            //Le asignamos una funcionalidad cuando se haga un click
+            $("#boton1").click(function () {
+                //Seleccionamos a un elemento cuyo id=parrafo1
+                //y lo ocultamos
+                $("#parrafo1").hide();
+            });
+
+            //Seleccionamos a un elemento cuyo id=boton2
+            //Le asignamos una funcionalidad cuando se haga un click
+            $("#boton2").click(function () {
+                console.log("Se dio un click al boton 2");
+            });
+
+            //Seleccionamos a un elemento cuyo id=boton2
+            //Le asignamos una funcionalidad cuando salga el mouse de encima
+            $("#boton2").mouseleave(function () {
+                $("#parrafo2").hide();
+            });
+
+            $("#boton3").click(function () {
+                $("#parrafo3").css("background-color", "#cccccc");
+            });
+
+            $("#txtMensaje").focus(function () {
+                $("#txtAcciones").val("Se colocó el foco");
+            });
+
+            $("#txtMensaje").blur(function () {
+                $("#txtAcciones").val("Se retiró el foco");
+            });
+
+            $("#txtMensaje").keypress(function () {
+                $("#txtAcciones").val($("#txtMensaje").val());
+            });
+        }
+
+        );
+    </script>
+
+</body>
+
+</html>

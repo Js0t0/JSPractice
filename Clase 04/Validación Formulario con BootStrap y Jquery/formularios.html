@@ -1,0 +1,120 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Demo de Formularios | Programación Avanzada JavaScript</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="icon" type="image/png" href="../favicon.ico">
+        <link rel="stylesheet" href="formularios.css">
+    </head>
+
+    <body>
+       
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h1 class="display-4">Validación con HTML</h1>
+                    </div>
+                    <div class="col-12">
+                        <form id="html-form" autocomplete="off">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="nombre-html">Nombre</label>
+                                        <input type="text" class="form-control" id="nombre-html" placeholder="Escriba su nombre" maxlength="40" minlength="2" required autofocus pattern="[A-Za-z]+"/>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="apellido-html">Apellido</label>
+                                        <input type="text" class="form-control" id="apellido-html" placeholder="Escriba su apellido" maxlength="30" minlength="2" required pattern="[A-Za-z]+"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="nc-html">Nombre Completo</label>
+                                        <input type="text" class="form-control" id="nc-html" readonly/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="edad-html">Edad</label>
+                                        <input type="number" class="form-control" id="edad-html" placeholder="Escriba su edad" max="150" min="0" required/>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="edad-html">Estado Civil</label>
+                                        <input list="estadosciviles" id="estado-civil-html" class="form-control" placeholder="Escriba su estado civil" required/>
+                                        <datalist id="estadosciviles">
+                                            <option label="Soltero" value="Soltero">
+                                            <option label="Casado" value="Casado">
+                                            <option label="Divorciado" value="Divorciado">
+                                            <option label="Unido" value="Unido">
+                                            <option label="Separado" value="Separado">
+                                            <option label="Otro" value="Otro">
+                                        </datalist>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="sexo-html">Sexo</label>
+                                        <select id="sexo-html" class="form-control" required>
+                                            <option selected value="">Elegir...</option>
+                                            <option>Masculino</option>
+                                            <option>Femenino</option>
+                                            <option>Otro</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="escolaridad-html">Escolaridad (marque la última obtenida)</label><br/>
+                                        <input id="escolaridad-p" name="escolaridad" type="radio" value="primaria" checked/> Primaria <br/>
+                                        <input id="escolaridad-s" name="escolaridad" type="radio" value="secundaria"/> Secundaria <br/>
+                                        <input id="escolaridad-t" name="escolaridad" type="radio" value="tecnico"/> Técnico <br/>
+                                        <input id="escolaridad-u" name="escolaridad" type="radio" value="universitaria"/> Universitaria <br/>
+                                        <input id="escolaridad-pt" name="escolaridad" type="radio" value="postgrado"/> Postgrado <br/>
+                                        <input id="escolaridad-d" name="escolaridad" type="radio" value="doctorado"/> Doctorado <br/>
+                                        <input id="escolaridad-o" name="escolaridad" type="radio" value="otro"/> Otro <br/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="email-html">Email</label>
+                                        <input type="email" class="form-control" id="email-html" placeholder="Escriba su email" required/>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="password-html">Password</label>
+                                        <input type="password" class="form-control" id="password-html" placeholder="Escriba su password" required/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group form-check">
+                                        <input type="checkbox" class="form-check-input" id="aceptar-terminos-html" required title="Debe aceptar los términos y condiciones para poder seguir" />
+                                        <label class="form-check-label" for="aceptar-terminos-html">Acepto términos y condiciones</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Ingresar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br /><br /><br /><br />
+        <script src="./formularios.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    </body>
+</html>

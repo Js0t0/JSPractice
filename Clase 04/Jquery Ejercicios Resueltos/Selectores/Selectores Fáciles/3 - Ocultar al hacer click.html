@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--
+ @author Raúl Caro Pastorino
+ @copyright Copyright © 2017 Raúl Caro Pastorino
+ @license https://wwww.gnu.org/licenses/gpl.txt
+-->
+
+<!--
+↓ INSTRUCCIONES DEL EJERCICIO ↓
+En el mismo documento HTML anterior.
+
+Suponer que el encabezado y el primer párrafo tienen el atributo class=”intro”.
+
+Deberás ocultar al clickar el botón, dicho párrafo.
+-->
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ocultar al hacer click</title>
+    <script src="./jquery-3.2.1.js"></script>
+    <script>
+    window.onload = function() {
+        /**
+         * Esta función oculta todo el contenido al ser llamada
+         */
+        function todoOculto() {
+            $('p.intro').hide();
+        }
+
+        // Añado el evento 'onclick' con la función todoOculto()
+        $('input[name="ocultar"]').on('click', todoOculto);
+    }
+    </script>
+</head>
+
+<body>
+    <h1 class="intro">Ocultar elementos</h1>
+    <p class="intro">Párrafo 1</p>
+    <p>Párrafo 2</p>
+    <input type="button" name="ocultar" value="Ocultar" />
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Demo de Formularios | Programación Avanzada JavaScript</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="icon" type="image/png" href="../favicon.ico">
+        <link rel="stylesheet" href="formulariosjs.css">
+    </head>
+
+    <body>
+        
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h1 class="display-4">Validación con JavaScript</h1>
+                    </div>
+                    <div class="col-12">
+                        <form id="js-form">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="nombre-js">Nombre</label>
+                                        <input type="text" class="form-control invalid" id="nombre-js" placeholder="Escriba su nombre"/>
+                                        <small id="nombre-js-error" class="form-text text-danger">El campo nombre es requerido.</small>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="apellido-js">Apellido</label>
+                                        <input type="text" class="form-control invalid" id="apellido-js" placeholder="Escriba su apellido"/>
+                                        <small id="apellido-js-error" class="form-text text-danger">El campo apellido es requerido.</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="nc-js">Nombre Completo</label>
+                                        <input type="text" class="form-control" id="nc-js" readonly/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="edad-js">Edad</label>
+                                        <input type="number" class="form-control invalid" id="edad-js" placeholder="Escriba su edad"/>
+                                        <small id="edad-js-error" class="form-text text-danger">Ingrese un número.</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="email-js">Email</label>
+                                        <input type="text" class="form-control invalid" id="email-js" placeholder="Escriba su email" />
+                                        <small id="email-js-error" class="form-text text-danger">El campo email es requerido.</small>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="password-js">Password</label>
+                                        <input type="password" class="form-control invalid" id="password-js" placeholder="Escriba su password" />
+                                        <small id="password-js-error" class="form-text text-danger">La contraseña es requerida.</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group form-check">
+                                        <input type="checkbox" class="form-check-input" id="aceptar-terminos-js" >
+                                        <label class="form-check-label" for="aceptar-terminos-js">Acepto términos y condiciones</label>
+                                        <small id="aceptar-terminos-js-error" class="form-text text-danger">Debe aceptar términos y condiciones para continuar.</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary" onclick="enviarFormulario()">Ingresar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br /><br /><br /><br />
+
+        <script src="./formulariosjs.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    </body>
+</html>

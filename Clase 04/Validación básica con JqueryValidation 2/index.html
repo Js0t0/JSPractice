@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Validación con jQuery.validate</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+    <style>
+        label.error {
+            color: #CC0033;
+        }
+
+        input.error {
+            border-color: #CC0033;
+        }
+    </style>
+    <script>
+        $(function () {
+            $('#frm-alumnos').validate({
+                rules: {
+                    nombre: {
+                        required: true
+                    },
+                    a_paterno: {
+                        required: true
+                    },
+                    a_materno: {
+                        required: true
+                    },
+                    edad: {
+                        required: true,
+                        digits: true,
+                        min: 5,
+                        max: 68
+                    }
+                },
+                messages: {
+                    nombre: {
+                        required: 'El nombre del alumno es obligatorio'
+                    },
+                    a_paterno: {
+                        required: 'El apellido paterno del alumno es obligatorio'
+                    },
+                    a_materno: {
+                        required: 'El apellido materno del alumno es obligatorio'
+                    },
+                    edad: {
+                        required: 'La edad del alumno es obligatoria',
+                        digits: 'Solo números enteros',
+                        min: 'La edad minima aceptada es 5 años',
+                        max: 'La edad maxima aceptada es 68 años'
+                    },
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <form action="#" method="POST" id="frm-alumnos" autocomplete="off">
+        <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" class="form-control" id="nombre" name="nombre">
+        </div>
+        <div class="form-group">
+            <label for="a_paterno">Apellido paterno</label>
+            <input type="text" class="form-control" id="a_paterno" name="a_paterno">
+        </div>
+        <div class="form-group">
+            <label for="a_materno">Apellido materno</label>
+            <input type="text" class="form-control" id="a_materno" name="a_materno">
+        </div>
+        <div class="form-group">
+            <label for="edad">Edad</label>
+            <input type="text" class="form-control" id="edad" name="edad">
+        </div>
+        <div class="float-right">
+            <button type="submit" class="btn btn-lg btn-primary">Registrar</button>
+        </div>
+    </form>
+</body>
+
+</html>

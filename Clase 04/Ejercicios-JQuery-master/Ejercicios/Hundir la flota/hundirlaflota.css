@@ -1,0 +1,50 @@
+#tablero {
+    
+    width: 480px;
+    height: 480px;
+    position: relative;
+    margin: 0 auto;
+    
+}
+
+#UI {
+    
+    text-align: center;
+    margin-bottom: 25px;
+    
+}
+
+.blanco, .azul {
+    
+    width: 80px;
+    height: 80px;
+    box-sizing: border-box;
+    border: 1px solid black;
+    float: left;
+}
+
+.blanco {
+	
+    background-color: white;
+    
+}
+
+.azul {
+	
+    background-color: lightblue;
+    
+}
+
+.hundido {
+    
+    background-image: url("img/barco.jpg");
+    background-size: cover;
+    
+}
+
+.agua {
+    
+    background-image: url("img/agua.jpg");
+    background-size: cover;
+    
+}

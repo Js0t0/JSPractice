@@ -1,0 +1,50 @@
+<!-- Juego de bolitas
+
+Habra un rectangulo de juego con 3 vidas y niveles infinitos
+
+saldra 1 bolita cliqueable de un color elegido
+
+si la bolita llega arriba, quitara una vida al jugador. Si cliquea la bola antes de que llegue 
+arriba subira un nivel. La bolita tardara 5 segundos ne llegar arriba y tambien ira en diagonal
+a una posicion left aleatoria
+
+en cada nivel se añadira una bolita mas de colores distintos.
+
+-->
+
+
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Bolitas Game</title>
+        <script src="jquery.js"></script>
+        <script src="bolitas.js"></script>
+        <link rel="stylesheet" type="text/css" href="bolitas.css">
+        
+    </head>
+    
+    <body>
+		<div id="contenedor">
+            
+            <div id="UI">
+                <div id="header">En este juego tendras que Cliquear solo la bolita del color que hayas elegido para subir de nivel.</div>
+                <p>Nivel: <span id="nivel">-</span></p>
+                <p>Vidas: <span id="vidas">-</span></p>
+                <select id="color">
+                    <option id="rojo" value="red">Rojo</option>
+                    <option id="verde" value="Green">Verde</option>
+                    <option id="rosa" value="pink">Rosa</option>
+                    <option id="morado" value="purple">Morado</option>
+                    <option id="azul" value="blue">Azul</option>
+                    <option id="amarillo" value="yellow">Amarillo</option>
+                    <option id="naranja" value="orange">Naranja</option>
+                </select>
+                <button id="start">Comenzar</button>
+            </div>
+		    <div id="gamespace">
+		        
+		    </div>	
+		</div>
+    </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+
+    </head>
+    <body>
+        <h1>Clase Javascript / POO / Ejemplos básicos</h1>
+        
+        <script>
+            
+            //Prototipo de Estudiante
+            function Estudiante(nombre, apellido, edad) {
+			  
+              this.nombre = nombre;
+              this.apellido = apellido;
+			  this.edad = edad;
+			  
+              this.presentarse = function() {
+				alert('El estudiante ' + this.nombre + ' ' + this.apellido + ' tiene ' + this.edad + ' años de edad');
+			  };
+
+			  this.saludar = function() {
+				alert('Hola! Soy ' + this.nombre + ' ' + this.apellido);
+			  };
+			}
+
+            //Creamos un objeto Estudiante
+            const estudiante1 = new Estudiante ('Pepito', 'Alcazar', 15);
+			estudiante1.presentarse();
+			estudiante1.saludar();
+            console.log(estudiante1);
+
+            //Otra forma de crear un objeto
+            const persona1 = new Object();
+            persona1.nombre = "Manuel";
+			persona1.apellido = "Perez";
+			persona1.saludar = function() {
+				return `${this.nombre} ${this.apellido} dice hola!`;
+			};
+            console.log(persona1);
+
+        </script>
+    </body>
+</html>

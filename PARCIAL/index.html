@@ -14,10 +14,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,900;1,800&display=swap" rel="stylesheet">
   </head>
   <body>
-    <h1>10mo Evento de Videojuegos en Latinoamérica</h1>
+    <h1 style=font-size:60px>10mo Evento de Videojuegos en Latinoamérica</h1>
     <main>
       <form action="" class="formulario" id="formulario">
-
+        <p class="formulario_mensaje_exito" id="formulario_mensaje_exito">
+          ¡Formulario Enviado Exitosamente!
+        </p>
         <!-- Grupo:Nombre -->
         <div class="formulario_grupo" id="grupo_nombre">
           <label for="nombre" class="formulario_label">Nombre y Apellido: </label>
@@ -25,7 +27,7 @@
             <input id="nombre" name="nombre" class="formulario_input" type="text" placeholder="Escribe tu nombre"/>
             <i class="formulario_validacion_estado fas fa-times-circle"></i>
           </div>
-          <p class="formulario_input_error">El nombre solo puede contener letras .</p>
+          <p class="formulario_input_error">*El nombre solo puede contener letras*</p>
         </div>
 
         <!-- Grupo:Usuario -->
@@ -35,7 +37,7 @@
             <input id="usuario" name="usuario" class="formulario_input" type="text" placeholder="Escribe tu usuario"/>
             <i class="formulario_validacion_estado fas fa-times-circle"></i>
           </div>
-          <p class="formulario_input_error"> El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo. </p>
+          <p class="formulario_input_error"> *El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo* </p>
         </div>
 
         <!-- Grupo:Correo -->
@@ -45,7 +47,7 @@
             <input id="correo" name="correo" class="formulario_input" type="email" placeholder="contacto@domi.nio"/>
             <i class="formulario_validacion_estado fas fa-times-circle"></i>
           </div>
-          <p class="formulario_input_error"> El correo solo puede contener letras, numeros, puntos, guiones y guion bajo. </p>
+          <p class="formulario_input_error"> *El correo solo puede contener letras, numeros, puntos, guiones y guion bajo* </p>
         </div>
 
         <!-- Grupo:Password -->
@@ -55,7 +57,7 @@
             <input id="password" name="password" class="formulario_input" type="password" />
             <i class="formulario_validacion_estado fas fa-times-circle"></i>
           </div>
-          <p class="formulario_input_error">La contraseña tiene que ser de 4 a 12 dígitos.</p>
+          <p class="formulario_input_error">*La contraseña tiene que ser de 4 a 14 dígitos*</p>
         </div>
 
         <!-- Grupo:Password 2 -->
@@ -65,7 +67,7 @@
             <input id="password2" name="password2" class="formulario_input" type="password" />
             <i class="formulario_validacion_estado fas fa-times-circle"></i>
           </div>
-          <p class="formulario_input_error">Ambas contraseñas deben de ser iguales.</p>
+          <p class="formulario_input_error">*Ambas contraseñas deben de ser iguales*</p>
         </div>
 
      
@@ -101,17 +103,17 @@
             <option value="UY">Uruguay</option>
             <option value="VE">Venezuela</option>
           </select>
-          <p class="formulario_input_error">Selecciona tu País</p>
+          <p class="formulario_input_error">*Selecciona tu País*</p>
         </div>
 
         <!-- Grupo:Telefono -->
         <div class="formulario_grupo" id="grupo_telefono">
-          <label for="telefono" class="formulario_label">Telefono: </label>
+          <label for="telefono" class="formulario_label">Teléfono: </label>
           <div class="formulario_grupo_input">
             <input id="telefono" name="telefono" class="formulario_input" type="text" placeholder="Numero Telefonico" />
             <i class="formulario_validacion_estado fas fa-times-circle"></i>
           </div>
-          <p class="formulario_input_error"> El telefono solo puede contener letras, numeros, puntos, guiones y guion bajo. </p>
+          <p class="formulario_input_error">*El teléfono solo puede contener números de 6 a 12 digitos*</p>
         </div>
 
         <!-- Grupo:Terminos y Condiciones -->
@@ -133,12 +135,12 @@
 
         <div class="formulario_grupo formulario_grupo_btn_enviar">
           <button type="submit" class="formulario_btn">Enviar</button>
-          <p class="formulario_mensaje_exito" id="formulario_mensaje_exito">
-            Formulario enviado exitosamente!
-          </p>
+          
         </div>
       </form>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+
     <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
     <script src="js.js"></script>
   </body>

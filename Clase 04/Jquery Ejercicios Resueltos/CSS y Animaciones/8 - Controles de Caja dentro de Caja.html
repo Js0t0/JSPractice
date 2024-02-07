@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<!--
+ @author Raúl Caro Pastorino
+ @copyright Copyright © 2017 Raúl Caro Pastorino
+ @license https://wwww.gnu.org/licenses/gpl.txt
+-->
+
+<!--
+↓ INSTRUCCIONES DEL EJERCICIO ↓
+Crea un div con las siguientes dimensiones:400x400. Dentro de éste otro (50x50).
+
+Detrás del primer div contener añadir 5 botones con las siguientes funcionalidades:
+
+    a) Empezar: Comienza la animación
+    b) Parar: Para la animación actual pero continúa con el resto.
+    c) Parar todo: Detiene todas las animaciones de inmediato.
+    d) Para y salta a la siguiente: Detiene la animación activa, pero acabándola primero y luego continua el resto.
+    e) Parar todo y termina la actual: Detiene las animaciones pero acabando primero la que se encuentra en ejecución.
+    f) Ir al estado final de todas las animaciones
+
+Funcionamiento de stop() → stop(pararTodas,iralfinal)
+-->
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <title>Controles de Caja dentro de Caja</title>
+    <style type="text/css">
+        #cajaPrincipal {
+            margin: auto;
+            width: 400px;
+            height: 400px;
+            border: 10px solid #000000;
+        }
+
+        #pieza {
+            width: 50px;
+            height: 50px;
+            background-color: #ff0000;
+        }
+
+        #cajaBotones {
+            margin-top: 15px;
+            width: 100%;
+            text-align: center;
+        }
+
+        #cajaBotones > input {
+            margin: 0 3px;
+            padding: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+    <script src="./jquery-3.2.1.js"></script>
+    <script>
+    window.onload = function() {
+        // Duración de las transiciones en milisegundos
+        var tiempo = 2000;
+        var xyz;
+
+        $('body').append('<div id="cajaPrincipal">' +
+                             '<div id="pieza"></div>' +
+                         '</div>' +
+                         '<div id="cajaBotones">' +
+                             '<input type="button" value="Empezar" />' +
+                             '<input type="button" value="Saltar Animacion" />' +
+                             '<input type="button" value="Parar Todo" />' +
+                             '<input type="button" value="Parar y Saltar" />' +
+                             '<input type="button" value="Parar y Detener" />' +
+                             '<input type="button" value="Ir al Final" />' +
+                         '</div>'
+        );
+
+        /**
+         * Para la animación actual pero continúa con el resto.
+         */
+        function saltarAnimacion() {
+            $('#pieza').stop(false, false);
+        }
+
+        /**
+         * Detiene todas las animaciones de inmediato.
+         */
+        function parartodo() {
+            $('#pieza').stop(true, false);
+        }
+
+        /**
+         * Detiene la animación activa, pero acabándola primero
+         * y luego continua el resto.
+         */
+        function pararYsaltar() {
+            $('#pieza').stop(false, true);
+        }
+
+        /**
+         * Detiene las animaciones pero acabando primero la
+         * que se encuentra en ejecución.
+         */
+        function pararYdetener() {
+            $('#pieza').stop(true, true);
+        }
+
+        /**
+         * Ir al estado final de todas las animaciones
+         */
+        function irFinal() {
+            $('#pieza').finish();
+        }
+
+        /**
+         * Da una vuelta con la pieza dentro de la caja.
+         */
+        function mover() {
+            $('#pieza').animate({'margin-left':'350'}, tiempo, 'linear')
+                       .animate({'margin-top':'350'}, tiempo, 'linear')
+                       .animate({'margin-left':'0'}, tiempo, 'linear')
+                       .animate({'margin-top':'0'}, tiempo, 'linear');
+        }
+
+        function empezar() {
+            mover();
+        }
+
+        $('input[value="Empezar"]').on('click', empezar);
+        $('input[value="Saltar Animacion"]').on('click', saltarAnimacion);
+        $('input[value="Parar Todo"]').on('click', parartodo);
+        $('input[value="Parar y Saltar"]').on('click', pararYsaltar);
+        $('input[value="Parar y Detener"]').on('click', pararYdetener);
+        $('input[value="Ir al Final"]').on('click', irFinal);
+    }
+    </script>
+</head>
+
+<body>
+
+</body>
+</html>

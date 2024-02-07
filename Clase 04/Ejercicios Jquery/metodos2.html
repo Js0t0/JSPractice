@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Métodos append, prepend, after y before</title>
+  </head>
+  <body>
+	
+	<p id="texto">un texto de ejemplo</p>
+  	
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+    	
+      //añade al final lo que coloque en el append
+    	$('#texto').append(' del curso de <b>jquery</b>');
+
+    	$('#texto').prepend('<b>esto</b> es ');
+    	//$('#texto').after('<p>esto es el segundo parrafo con after</p>');
+    	//$('#texto').before('<p>esto es el primer parrafo con before</p>');
+
+    });
+
+    </script>
+  </body>
+</html>
